@@ -1,7 +1,7 @@
 import React from "react";
-import { TodoList } from "./TodoList";
+import { ATodoList } from "./aTodoList";
 
 //create your first component
 export function Home() {
-	return <TodoList />;
+	return <ATodoList />;
 }
