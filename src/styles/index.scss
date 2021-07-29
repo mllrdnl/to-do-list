@@ -1,12 +1,22 @@
 @import "~bootstrap/scss/bootstrap.scss";
+@import 'https://fonts.googleapis.com/css2?family=Amatic+SC&family=Shadows+Into+Light&display=swap';
 
 body {
-    background-color: rgb(223, 244, 247);  
+    // background-color: rgb(223, 244, 247);  
     height: 100vh;
-}
+    background-image: url("brown-texture.jpg");
+    background-repeat: repeat;
 
-//use css to remove bullets from lis
+}
 
 li {
     list-style: none;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 30px;
+}
+
+h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 80px;
+    
 }
