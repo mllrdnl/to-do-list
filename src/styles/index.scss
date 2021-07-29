@@ -13,6 +13,8 @@ li {
     list-style: none;
     font-family: 'Shadows Into Light', cursive;
     font-size: 30px;
+    text-align: left;
+    padding-right: 20px;
 }
 
 h1 {
@@ -22,18 +24,29 @@ h1 {
 }
 
 .todo-list {
-    background-color: rgb(235, 205, 163);
+    background-color: rgb(212, 183, 148);
+    box-shadow: 5px 5px 20px black;
 }
 
 input {
-    background-color: rgb(228, 209, 183);
+    background-color: rgb(212, 183, 147);
+    // border-color: rgb(99, 59, 26);
+    // padding: 10px;
+    margin-left: 30px;
+    margin-top: 5px;
+    border: none;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 30px;
+
 }
 
 #totaltasks {
     font-size: 20px;
+    float: left;
 }
 
 button {
     border: none;
-    background-color: rgb(235, 205, 163);
+    background-color: rgb(212, 183, 148);
+    float: right;
 }

@@ -20,6 +20,7 @@ export function ATodoList() {
 					<div className="todo-list d-flex justify-content-center flex-column">
 						<input
 							type="text"
+							placeholder="what needs done?"
 							onChange={e => setInput(e.target.value)}
 							value={input}
 							onKeyUp={e => {
