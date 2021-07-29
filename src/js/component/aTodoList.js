@@ -16,7 +16,7 @@ export function ATodoList() {
 				<div className="col-12">
 					<h1 className="todo-title text-center">todos</h1>
 				</div>
-				<div className="col-12">
+				<div className="col-6">
 					<div className="todo-list d-flex justify-content-center flex-column">
 						<input
 							type="text"
@@ -60,7 +60,7 @@ export function ATodoList() {
 									</li>
 								);
 							})}
-							<li>{todos.length} items left</li>
+							<li id="totaltasks">{todos.length} items left</li>
 						</ul>
 					</div>
 				</div>
