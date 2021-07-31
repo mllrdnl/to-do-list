@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { getTodoList, updateTodoList, createTodoList } from "../lib/api";
 
-
 export function ATodoList() {
 	const [todos, setTodos] = useState([]);
 	const [input, setInput] = useState("");
@@ -12,7 +11,7 @@ export function ATodoList() {
 		getTodoList()
 			.then(resp => {
 				if (resp.status === 404) {
-                    createTodoList();
+					createTodoList();
 					return [];
 				} else {
 					return resp.json();
@@ -28,7 +27,7 @@ export function ATodoList() {
 	}, []);
 
 	React.useEffect(() => {
-        updateTodoList(todos)
+		updateTodoList(todos);
 	}, [todos]);
 
 	return (
@@ -83,6 +82,13 @@ export function ATodoList() {
 								);
 							})}
 							<li id="totaltasks">{todos.length} items left</li>
+							<button
+								onClick={() => {
+									const emptyList = (todos.length = 0);
+									setTodos([emptyList]);
+								}}>
+								Clear All
+							</button>
 						</ul>
 					</div>
 				</div>
