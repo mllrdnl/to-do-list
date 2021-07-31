@@ -10,6 +10,25 @@ export function ATodoList() {
 	]);
 	const [input, setInput] = useState("");
 
+	React.useEffect(() => {
+		fetch("https://assets.breatheco.de/apis/fake/todos/user/mllrdnl", {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json"
+			}
+		})
+			.then(resp => {
+				return resp.json();
+			})
+			.then(data => {
+				const newTodos = data.map(x => x.label);
+				setTodos(newTodos);
+			})
+			.catch(error => {
+				console.log(error);
+			});
+	}, []);
+
 	return (
 		<div className="container">
 			<div className="row d-flex justify-content-center">
