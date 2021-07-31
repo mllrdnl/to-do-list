@@ -1,30 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { getTodoList, updateTodoList, createTodoList } from "../lib/api";
+
 
 export function ATodoList() {
 	const [todos, setTodos] = useState([]);
 	const [input, setInput] = useState("");
 
 	React.useEffect(() => {
-		fetch("https://assets.breatheco.de/apis/fake/todos/user/mllrdnl", {
-			method: "GET",
-			headers: {
-				"Content-Type": "application/json"
-			}
-		})
+		getTodoList()
 			.then(resp => {
 				if (resp.status === 404) {
-					fetch(
-						"https://assets.breatheco.de/apis/fake/todos/user/mllrdnl",
-						{
-							method: "POST",
-							headers: {
-								"Content-Type": "application/json"
-							},
-							body: JSON.stringify([])
-						}
-					);
+                    createTodoList();
 					return [];
 				} else {
 					return resp.json();
@@ -40,13 +28,7 @@ export function ATodoList() {
 	}, []);
 
 	React.useEffect(() => {
-		fetch("https://assets.breatheco.de/apis/fake/todos/user/mllrdnl", {
-			method: "PUT",
-			body: JSON.stringify(todos.map(x => ({ label: x, done: false }))),
-			headers: {
-				"Content-Type": "application/json"
-			}
-		});
+        updateTodoList(todos)
 	}, [todos]);
 
 	return (
