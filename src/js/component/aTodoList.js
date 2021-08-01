@@ -1,7 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { getTodoList, updateTodoList, createTodoList } from "../lib/api";
+import {
+	getTodoList,
+	updateTodoList,
+	createTodoList,
+	deleteTodoList
+} from "../lib/api";
 
 export function ATodoList() {
 	const [todos, setTodos] = useState([]);
@@ -28,6 +33,10 @@ export function ATodoList() {
 
 	React.useEffect(() => {
 		updateTodoList(todos);
+	}, [todos]);
+
+	React.useEffect(() => {
+		deleteTodoList(todos);
 	}, [todos]);
 
 	return (
@@ -83,11 +92,12 @@ export function ATodoList() {
 							})}
 							<li id="totaltasks">{todos.length} items left</li>
 							<button
+								id="clearAll"
 								onClick={() => {
-									const emptyList = (todos.length = 0);
-									setTodos([emptyList]);
+									// const emptyList = (todos.length = 0);
+									setTodos([(todos.length = 0)]);
 								}}>
-								Clear All
+								clear all
 							</button>
 						</ul>
 					</div>

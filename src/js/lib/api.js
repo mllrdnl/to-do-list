@@ -26,3 +26,13 @@ export const createTodoList = () => {
 		}
 	});
 };
+
+export const deleteTodoList = () => {
+	return fetch("https://assets.breatheco.de/apis/fake/todos/user/mllrdnl", {
+		method: "DEL",
+		body: JSON.stringify([]),
+		headers: {
+			"Content-Type": "application/json"
+		}
+	});
+};

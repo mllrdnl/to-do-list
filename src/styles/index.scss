@@ -38,17 +38,33 @@ input {
     border: none;
     font-family: 'Shadows Into Light', cursive;
     font-size: 30px;
-    
-
 }
 
 #totaltasks {
     font-size: 20px;
     float: left;
+    color: rgb(117, 116, 116);
 }
 
 button {
     border: none;
     background-color: rgb(212, 183, 148);
     float: right;
+}
+
+#clearAll {
+    font-size: 20px;
+    font-family: 'Shadows Into Light', cursive;
+    border-color: rgb(212, 183, 148);
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    margin-right: 15px;
+    color: rgb(117, 116, 116);
+
+}
+
+#clearAll:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
