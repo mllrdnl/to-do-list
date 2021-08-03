@@ -35,10 +35,6 @@ export function ATodoList() {
 		updateTodoList(todos);
 	}, [todos]);
 
-	React.useEffect(() => {
-		deleteTodoList(todos);
-	}, [todos]);
-
 	return (
 		<div className="container">
 			<div className="row d-flex justify-content-center">
@@ -95,7 +91,7 @@ export function ATodoList() {
 								id="clearAll"
 								onClick={() => {
 									// const emptyList = (todos.length = 0);
-									setTodos([(todos.length = 0)]);
+									setTodos([]);
 								}}>
 								clear all
 							</button>
